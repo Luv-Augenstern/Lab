@@ -7,7 +7,6 @@ class Figure:
         self.c = c  # Dimension c (height)
 
     def volume(self) -> float:
-        """Method 1: Calculate volume V = a * b * c"""
         # Calculate and return the volume using the formula
         return self.a * self.b * self.c
 
@@ -21,7 +20,6 @@ class FigureWithCavity(Figure):
         self.d = d  # Wall thickness
 
     def volume(self) -> float:
-        """Method 2: Calculate volume excluding the cavity (V - (a-d)*(b-d)*(c-d))"""
         # Calculate outer volume using parent class method
         outer_vol = super().volume()
 
@@ -77,4 +75,5 @@ if __name__ == "__main__":
         elif isinstance(fig, FigureWithCavity):
             print(f"Body with cavity: {fig.volume()}")
         else:
+
             print(f"Simple figure: {fig.volume()}")
